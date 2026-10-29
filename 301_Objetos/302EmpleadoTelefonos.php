@@ -24,7 +24,6 @@ class Empleado
     }
 
 
-
     public function debePagarImpuestos(): bool
     {
         $pagar = false;
@@ -41,45 +40,55 @@ class Empleado
     }
 
 
-    public function listarTelefonos(): string 
+    public function vaciarTelefonos(): void
+    {
+        $this->telefonos = [];
+    }
+
+    public function listarTelefonos(): string
     {
         $telefonos = "";
 
-        foreach($this->telefonos as $t){
+        foreach ($this->telefonos as $t) {
 
-            $telefonos = $telefonos.$t.", ";
+            $telefonos = $telefonos . $t . ", ";
         }
 
         return $telefonos;
     }
 
 
-
-
-
     public function getNombre(): string
     {
         return $this->nombre;
     }
+
     public function getApellidos(): string
     {
         return $this->apellidos;
     }
+
     public function getSueldo(): float
     {
         return $this->sueldo;
     }
 
+    public function getTelefonos()
+    {
+        return $this->telefonos;
+    }
 
 
     public function setNombre(string $nombre): void
     {
         $this->nombre = $nombre;
     }
+
     public function setApellidos(string $apellidos): void
     {
         $this->apellidos = $apellidos;
     }
+
     public function setSueldo(float $sueldo): void
     {
         $this->sueldo = $sueldo;
@@ -87,11 +96,16 @@ class Empleado
 }
 
 
-$e = new Empleado("Nombre 1","Apellido 1",1545.45);
+$e = new Empleado("Nombre 1", "Apellido 1", 1545.45);
 
 $e->anyadirTelefono(111111111111);
 $e->anyadirTelefono(2222222222222);
 $e->anyadirTelefono(3333333333);
 
 
-echo "Lista de telefonos del Empleado ".$e->getNombreCompleto().": ".$e->listarTelefonos();
+echo "Lista de telefonos del Empleado " . $e->getNombreCompleto() . ". Teléfonos: " . $e->listarTelefonos();
+
+$e->vaciarTelefonos();
+echo "<br>";
+
+echo "Se listan los teléfonos: " . ((empty($e->getTelefonos())) ? "No hay Teléfonos!!!" : $e->listarTelefonos());
