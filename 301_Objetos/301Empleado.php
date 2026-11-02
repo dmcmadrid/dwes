@@ -23,7 +23,6 @@ class Empleado
     }
 
 
-
     public function debePagarImpuestos(): bool
     {
         $pagar = false;
@@ -35,30 +34,32 @@ class Empleado
     }
 
 
-
     public function getNombre(): string
     {
         return $this->nombre;
     }
+
     public function getApellidos(): string
     {
         return $this->apellidos;
     }
+
     public function getSueldo(): float
     {
         return $this->sueldo;
     }
 
 
-
     public function setNombre(string $nombre): void
     {
         $this->nombre = $nombre;
     }
+
     public function setApellidos(string $apellidos): void
     {
         $this->apellidos = $apellidos;
     }
+
     public function setSueldo(float $sueldo): void
     {
         $this->sueldo = $sueldo;
