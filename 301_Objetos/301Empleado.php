@@ -74,6 +74,6 @@ echo $c->getNombreCompleto() . "<br>Su sueldo es: " . $c->getSueldo();
 
 echo "<br><br><br>";
 
-echo ($c->debePagarImpuestos()) ? "Sí que pagar Impuestos" : " No paga Impuestos";
+echo ($c->debePagarImpuestos()) ? "Sí paga Impuestos" : " No paga Impuestos";
 
 
