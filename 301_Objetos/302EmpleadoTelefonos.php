@@ -54,7 +54,7 @@ class Empleado
             $telefonos = $telefonos . $t . ", ";
         }
 
-        return $telefonos;
+        return rtrim($telefonos, ", ");
     }
 
 
@@ -73,7 +73,7 @@ class Empleado
         return $this->sueldo;
     }
 
-    public function getTelefonos()
+    public function getTelefonos():array
     {
         return $this->telefonos;
     }

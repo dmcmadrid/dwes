@@ -23,7 +23,6 @@ class Empleado
     }
 
 
-
     public function debePagarImpuestos(): bool
     {
         $pagar = false;
@@ -35,30 +34,32 @@ class Empleado
     }
 
 
-
     public function getNombre(): string
     {
         return $this->nombre;
     }
+
     public function getApellidos(): string
     {
         return $this->apellidos;
     }
+
     public function getSueldo(): float
     {
         return $this->sueldo;
     }
 
 
-
     public function setNombre(string $nombre): void
     {
         $this->nombre = $nombre;
     }
+
     public function setApellidos(string $apellidos): void
     {
         $this->apellidos = $apellidos;
     }
+
     public function setSueldo(float $sueldo): void
     {
         $this->sueldo = $sueldo;
@@ -73,6 +74,6 @@ echo $c->getNombreCompleto() . "<br>Su sueldo es: " . $c->getSueldo();
 
 echo "<br><br><br>";
 
-echo ($c->debePagarImpuestos()) ? "Sí que pagar Impuestos" : " No paga Impuestos";
+echo ($c->debePagarImpuestos()) ? "Sí paga Impuestos" : " No paga Impuestos";
 
 

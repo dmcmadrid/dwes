@@ -1,0 +1,110 @@
+REVISAR  PhpStorm + Git + GitHub
+=================================================================
+
+-----------------------------------------------------------------
+GIT INSTALADO
+-----------------------------------------------------------------
+Settings > Version Control > Git
+    Pulsando Test: Tiene que salir "Git version is ...".
+    Si da error: boton "Download and Install" y reciniciar
+
+
+
+-----------------------------------------------------------------
+INTERPRETE PHP Y XDEBUG
+-----------------------------------------------------------------
+ 1) Settings > PHP
+    - CLI Interpreter: si pone <no interpreter>:
+      boton: + > Other Local > PHP executable: C:\xampp\php\php.exe
+    - Debajo tiene que salir "PHP version: 8.x" y "Debugger: Xdebug 3.x".
+    - PHP language level: la misma version (8.2).
+
+ 2) Settings > PHP > Debug
+    - Debug port: 9003 (puede ser: 9003,9000).
+
+
+-----------------------------------------------------------------
+SERVIDOR para que se recargue solo.
+-----------------------------------------------------------------
+ 1) Settings > Build, Execution, Deployment > Deployment
+    - Si aparece "xampp" en negrita (por defecto):
+      clic derecho > Stop Using as Default.
+
+ 2) Settings > Tools > Web Browsers and Preview
+    - Reload page in browser: On Save
+    - Reload page in built-in preview: On Save
+    - Built-in Server, Port: 63342
+
+
+-----------------------------------------------------------------
+QUITAR IA QUE RELLENA CÓDIGO
+-----------------------------------------------------------------
+Settings > Editor > General > Code Completion > Inline
+    - DESMARCAR "Enable inline completion using language models"
+    - No descargar los modelos de CSS/HTML/JavaScript.
+    - El autocompletado normal - Popup - dejar activado.
+
+
+-----------------------------------------------------------------
+CORRECTOR ORTOGRAFICO EN ESPANOL
+-----------------------------------------------------------------
+Settings > Editor > Natural Languages
+    - Esta "English (USA)"
+    - Si no está "Espanol": añadir > Spanish.
+    - No marcar "Enable Cloud".
+
+
+-----------------------------------------------------------------
+CUENTA DE GITHUB EN PHPSTORM
+-----------------------------------------------------------------
+Settings > Version Control > GitHub
+    - Debe salir dmcmadrid. Si no: + (o Add account...) > Log In via GitHub
+      > entrar con dmcmadrid > Authorize.
+
+
+-----------------------------------------------------------------
+GIT EN LA TERMINAL
+-----------------------------------------------------------------
+Comprobar mis datos (dentro de dwes):
+    - git config user.name
+    - git config user.email
+
+Si sale otro usuario, escribir:
+    git config user.name "Denis Mendoza"
+    git config user.email "dgmc10@educa.madrid.org"
+
+Comprobar la conexion con GitHub:
+    git remote -v             -> origin https://github.com/dmcmadrid/dwes.git
+    Si no sale nada:
+    git remote add origin https://github.com/dmcmadrid/dwes.git
+
+Comprobar el estado:
+    git status                -> On branch main
+                                 Your branch is up to date with 'origin/main'
+
+[ ] Existe el archivo .gitignore en dwes y contiene la linea:  .idea/
+
+
+
+-----------------------------------------------------------------
+COMANDOS DE CADA DIA
+-----------------------------------------------------------------
+Al empezar:   git pull
+Al terminar:  git add .
+              git commit -m "Mensaje"
+              git push
+Ver historial: git log --oneline
+
+
+-----------------------------------------------------------------
+ATAJOS (Eclipse -> PhpStorm)
+-----------------------------------------------------------------
+Generar constructor/getters/setters   Alt+Insert  (o clic derecho > Generate...)
+Comentar / descomentar linea          Ctrl+/
+Formatear codigo                      Ctrl+Alt+L
+Autocompletar                         Ctrl+Espacio
+Renombrar                             Shift+F6
+Ir a la declaracion                   Ctrl+B  (o Ctrl+clic)
+Buscar archivo                        Ctrl+Shift+N
+Duplicar linea                        Ctrl+D   (OJO: en Eclipse borraba)
+Borrar linea                          Ctrl+Y
